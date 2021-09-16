@@ -1,0 +1,6 @@
+.login-bg {
+    background-image: url('../images/login-bg.jpg');
+}
+input, button {
+    @apply focus:outline-none
+}
