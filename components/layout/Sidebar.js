@@ -12,7 +12,7 @@ import { RiCoupon2Fill } from "react-icons/ri";
 import { SiCampaignmonitor } from "react-icons/si";
 import { ThemeContext } from "@context/Theme";
 
-export default function SideBar() {
+export default function Sidebar() {
   const [collapseShow, setCollapseShow] = React.useState("hidden");
   const router = useRouter();
   const { showSideBar, theme } = useContext(ThemeContext);

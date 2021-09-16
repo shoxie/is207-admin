@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { ThemeContext } from "@context/Theme";
-import SideBar from "./SideBar";
+import SideBar from "./Sidebar";
 import Header from "./Header";
 import { useRouter } from "next/router";
 import { CgPlayListRemove } from "react-icons/cg";
