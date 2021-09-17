@@ -31,12 +31,12 @@ export default function Sidebar() {
         <div className="text-gray-400 flex flex-col space-y-5 pt-5">
           <div
             className={
-              router.pathname === "/admin/dashboard"
+              router.pathname === "/admin"
                 ? "bg-gray-200 dark:bg-gray-800 dark:text-white text-black rounded-2xl p-3 hover:cursor-pointer"
                 : "hover:cursor-pointer"
             }
           >
-            <Link href="/admin/dashboard">
+            <Link href="/admin">
               <div className="flex flex-row items-center space-x-3">
                 <AiFillDashboard className="text-2xl" />
                 <span>Dashboard</span>
@@ -45,15 +45,29 @@ export default function Sidebar() {
           </div>
           <div
             className={
-              router.pathname === "/admin/product_detail"
+              router.pathname === "/admin/product-detail"
                 ? "bg-gray-200 dark:bg-gray-800 dark:text-white text-black rounded-2xl p-3 hover:cursor-pointer"
                 : "hover:cursor-pointer"
             }
           >
-            <Link href="/admin/product_detail">
+            <Link href="/admin/product-detail">
               <div className="flex flex-row items-center space-x-3">
                 <AiFillDashboard className="text-2xl" />
-                <span>Product detail</span>
+                <span>Add new Product</span>
+              </div>
+            </Link>
+          </div>
+          <div
+            className={
+              router.pathname === "/admin/product-list"
+                ? "bg-gray-200 dark:bg-gray-800 dark:text-white text-black rounded-2xl p-3 hover:cursor-pointer"
+                : "hover:cursor-pointer"
+            }
+          >
+            <Link href="/admin/product-list">
+              <div className="flex flex-row items-center space-x-3">
+                <AiFillDashboard className="text-2xl" />
+                <span>Product list</span>
               </div>
             </Link>
           </div>

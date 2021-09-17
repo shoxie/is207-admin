@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 
 export default function InputForm({
-  setData,
+  submitFunction,
   dataFields,
   defaultData = { },
 }) {
@@ -12,7 +12,7 @@ export default function InputForm({
     setData(data);
   };
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-3">
+    <form onSubmit={handleSubmit(submitFunction)} className="flex flex-col space-y-3">
       {/* <input {...register("username", { required: true })} /> */}
       {dataFields.map((field, index) => {
         if (field.enums) {
