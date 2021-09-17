@@ -54,6 +54,10 @@ const dataFields = [
   {
     name: "quantity",
     type: "number",
+  },
+  {
+    name: "image",
+    type: "text"
   }
 ];
 export default function ProductDetail() {
