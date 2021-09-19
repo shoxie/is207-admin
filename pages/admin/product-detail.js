@@ -24,6 +24,10 @@ const dataFields = [
     required: true,
   },
   {
+    name: "howToCook",
+    type: "text",
+  },
+  {
     name: "description",
     type: "text",
     required: true,
@@ -69,7 +73,7 @@ const dataFields = [
 export default function ProductDetail({ id }) {
   const [data, setData] = useState({});
   const [defaultData, setDefaultData] = useState({});
-  
+
   useEffect(() => {
     if (id) {
       productApi.getOneProduct(id).then((res) => {
