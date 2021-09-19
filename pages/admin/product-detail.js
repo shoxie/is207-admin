@@ -19,6 +19,11 @@ const dataFields = [
     required: true,
   },
   {
+    name: "snippet",
+    type: "text",
+    required: true,
+  },
+  {
     name: "description",
     type: "text",
     required: true,
