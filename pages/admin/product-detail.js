@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import InputForm from "../../components/Form/InputForm";
 import productApi from "@api/productApi";
+import axiosClient from "@app/AxiosClient";
 
 const dataFields = [
   {
@@ -31,6 +32,15 @@ const dataFields = [
     name: "description",
     type: "text",
     required: true,
+  },
+  {
+    name: "snippet",
+    type: "text",
+    required: true,
+  },
+  {
+    name: "howToCook",
+    type: "text",
   },
   {
     name: "rating",
@@ -69,10 +79,30 @@ const dataFields = [
     name: "image",
     type: "text",
   },
+  {
+    name: "category",
+    type: "text",
+    enums: [],
+  },
 ];
 export default function ProductDetail({ id }) {
+  const [fields, setFields] = useState(dataFields);
   const [data, setData] = useState({});
   const [defaultData, setDefaultData] = useState({});
+
+  useEffect(() => {
+    let arr = [...fields];
+    axiosClient.get("/api/category").then((result) => {
+      for (let item of arr) {
+        if (item.name === "category") {
+          item.enums = result.data.map((e) => {
+            return { name: e.name, id: e._id };
+          });
+        }
+      }
+      setFields(arr);
+    });
+  }, []);
 
   useEffect(() => {
     if (id) {

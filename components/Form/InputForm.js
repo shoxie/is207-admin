@@ -22,6 +22,7 @@ export default function InputForm({
               <select
                 {...register(field.name, { required: !!field.required })}
                 className="w-full"
+                multiple={!!field.multiple}
               >
                 {field.enums.map((enumValue, idx) => {
                   return (
@@ -32,9 +33,9 @@ export default function InputForm({
                           : null
                       }
                       key={idx}
-                      value={enumValue}
+                      value={typeof enumValue === "string" ? enumValue : (enumValue.id ? enumValue.id : enumValue.name)}
                     >
-                      {enumValue}
+                      {typeof enumValue === "string" ? enumValue : enumValue.name}
                     </option>
                   );
                 })}
