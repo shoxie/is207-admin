@@ -11,7 +11,7 @@ export default function ProductList() {
     productApi
       .getAllProducts()
       .then((res) => {
-        setData(res.products);
+        setData(res.data);
       })
       .catch((e) => {
         Swal.fire({
