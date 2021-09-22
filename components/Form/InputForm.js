@@ -3,16 +3,21 @@ import { useForm } from "react-hook-form";
 export default function InputForm({
   submitFunction,
   dataFields,
-  defaultData = { },
+  defaultData = {},
 }) {
   const { register, handleSubmit, setValue } = useForm();
   // // Submit your data into Redux store
   const onSubmit = (data) => {
     // props.updateAction(data)
-    setData(data);
+    for (let field of dataFields) {
+      if (field.type === "number") {
+        data[field.name] = parseInt(data[field.name]);
+      }
+    }
+    submitFunction(data);
   };
   return (
-    <form onSubmit={handleSubmit(submitFunction)} className="flex flex-col space-y-3">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col space-y-3">
       {/* <input {...register("username", { required: true })} /> */}
       {dataFields.map((field, index) => {
         if (field.enums) {
@@ -24,6 +29,7 @@ export default function InputForm({
                 className="w-full"
                 multiple={!!field.multiple}
               >
+                <option value disable selected>Not selected</option>
                 {field.enums.map((enumValue, idx) => {
                   return (
                     <option
@@ -33,9 +39,17 @@ export default function InputForm({
                           : null
                       }
                       key={idx}
-                      value={typeof enumValue === "string" ? enumValue : (enumValue.id ? enumValue.id : enumValue.name)}
+                      value={
+                        typeof enumValue === "string"
+                          ? enumValue
+                          : enumValue.id
+                          ? enumValue.id
+                          : enumValue.name
+                      }
                     >
-                      {typeof enumValue === "string" ? enumValue : enumValue.name}
+                      {typeof enumValue === "string"
+                        ? enumValue
+                        : enumValue.name}
                     </option>
                   );
                 })}

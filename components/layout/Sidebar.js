@@ -72,6 +72,21 @@ export default function Sidebar() {
             </Link>
           </div>
 
+          <div
+            className={
+              router.pathname === "/category/category-list"
+                ? "bg-gray-200 dark:bg-gray-800 dark:text-white text-black rounded-2xl p-3 hover:cursor-pointer"
+                : "hover:cursor-pointer"
+            }
+          >
+            <Link href="/category/category-list">
+              <div className="flex flex-row items-center space-x-3">
+                <AiFillDashboard className="text-2xl" />
+                <span>Category list</span>
+              </div>
+            </Link>
+          </div>
+
         </div>
       </div>
     </>

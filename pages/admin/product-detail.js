@@ -80,7 +80,7 @@ const dataFields = [
     type: "text",
   },
   {
-    name: "category",
+    name: "categoryId",
     type: "text",
     enums: [],
   },
@@ -93,10 +93,11 @@ export default function ProductDetail({ id }) {
   useEffect(() => {
     let arr = [...fields];
     axiosClient.get("/api/category").then((result) => {
+      console.log(`result`, result)
       for (let item of arr) {
-        if (item.name === "category") {
+        if (item.name === "categoryId") {
           item.enums = result.data.map((e) => {
-            return { name: e.name, id: e._id };
+            return { name: e.name, id: e.id };
           });
         }
       }
