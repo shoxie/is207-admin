@@ -1,10 +1,18 @@
 import Cookies from "js-cookie";
 import { VscThreeBars } from "react-icons/vsc";
 import { ThemeContext } from "@context/Theme";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+
 export default function Header() {
-  const username = Cookies.get("username") || "Admin";
+  const [username, setUsername] = useState("Admin");
   const { showSideBar, setShowSideBar } = useContext(ThemeContext);
+
+  useEffect(() => {
+    let user = Cookies.get("username");
+    console.log('user', user)
+    if (user) setUsername(user);
+  }, []);
+
   return (
     <nav className="w-full h-16 px-4 bg-white dark:bg-gray-900 dark:text-white flex flex-row justify-between items-center shadow-md">
       <div

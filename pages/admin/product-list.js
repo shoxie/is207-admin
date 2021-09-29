@@ -78,7 +78,7 @@ export default function ProductList() {
         key: 'action',
         render: (text, record) => (
           <Space size="middle">
-            <Link href={`/admin/product-detail?id=`+ record._id}>Edit</Link>
+            <Link href={`/admin/product-detail?id=`+ record.id}>Edit</Link>
             <a>Delete</a>
           </Space>
         ),

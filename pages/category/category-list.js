@@ -42,7 +42,7 @@ export default function CategoryList() {
       title: "Action",
       key: "action",
       render: (text, record) => (
-        <Space size="middle">
+        <Space key={text} size="middle">
           <Link href={`/admin/product-detail?id=` + record._id}>Edit</Link>
           <a>Delete</a>
         </Space>
@@ -55,7 +55,7 @@ export default function CategoryList() {
         <div className="flex items-end justify-end w-full pb-5">
           <AddNewCategory />
         </div>
-        <Table dataSource={data} columns={columns} />
+        <Table rowKey="id" dataSource={data} columns={columns} />
       </div>
     </div>
   );

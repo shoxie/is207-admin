@@ -17,7 +17,7 @@ export default function Layout({ children }) {
       let token = Cookies.get("accessToken");
       if (!token) router.push("/");
     }
-  }, [router.pathname]);
+  }, [router]);
 
   return (
     <>

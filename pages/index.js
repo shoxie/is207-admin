@@ -18,15 +18,16 @@ export default function Home() {
     authApi
       .signIn(user)
       .then((res) => {
+        console.log(`res`, res)
         Cookies.set("accessToken", res.accessToken);
         Cookies.set("refreshToken", res.refreshToken);
         Cookies.set("username", res.username);
 
-        Swal.fire({
-          icon: "success",
-          text: `Welcome back, ${res.username}`,
-          timer: 3000,
-        }).then(() => router.push("/admin"));
+        // Swal.fire({
+        //   icon: "success",
+        //   text: `Welcome back, ${res.username}`,
+        //   timer: 3000,
+        // }).then(() => router.push("/admin"));
       })
       .catch((e) => {
         Swal.fire({
