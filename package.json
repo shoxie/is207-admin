@@ -3,31 +3,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "prepare": "husky install"
+    "start": "next start"
   },
   "dependencies": {
-    "@headlessui/react": "^1.4.1",
-    "@tailwindcss/aspect-ratio": "^0.2.1",
-    "@tailwindcss/forms": "^0.3.3",
-    "@tailwindcss/line-clamp": "^0.2.1",
-    "@tailwindcss/typography": "^0.4.1",
-    "antd": "^4.16.13",
-    "axios": "^0.21.4",
-    "framer-motion": "^4.1.17",
-    "js-cookie": "^3.0.1",
+    "antd": "^4.17.2",
     "next": "latest",
-    "query-string": "^7.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-hook-form": "^7.15.3",
-    "react-icons": "^4.2.0",
-    "react-use": "^17.3.1",
-    "sweetalert2": "^11.1.5"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
-    "husky": "^7.0.2",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.4"
   }

@@ -3,11 +3,7 @@
     "baseUrl": ".",
     "jsx": "react",
     "paths": {
-      "@components/*": ["./components/*"],
-      "@context/*": ["./context/*"],
-      "@api/*": ["./api/*"],
-      "@app/*": ["./app/*"],
-      "@constant/*": ["./constant/*"]
+      "@components/*": ["./components/*"]
     }
   }
 }

@@ -1,16 +1,16 @@
 import 'tailwindcss/tailwind.css'
-import Layout from '@components/layout'
-import { ThemeProvider } from "@context/Theme";
-import '../public/stylesheet/custom.css'
 import 'antd/dist/antd.css';
+import Layout from '@components/Layout'
+
+import React from 'react';
+React.useEffectLayout = React.useEffect
 
 function MyApp({ Component, pageProps }) {
+
   return (
-  	<ThemeProvider>
-        <Layout>
-            <Component {...pageProps} />
-        </Layout>
-    </ThemeProvider>
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
 
